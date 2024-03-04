@@ -80,20 +80,7 @@ document.querySelectorAll(".card").forEach((e) => {
     });
 });
 
-// document.querySelectorAll(".card").forEach((e) => {
-//     e.addEventListener("mouseleave", () => {
-//         gsap.to(e.querySelector(".rectBox h1"), {
-//             display: "block", // or "inline", depending on your HTML structure
-//             opacity: 0,
-//             ease: "power4"
-//         });
-//         gsap.to(e.querySelector(".rectBox p"), {
-//             display: "block", // or "inline", depending on your HTML structure
-//             opacity: 0,
-//             ease: "power4"
-//         });
-//     });
-// });
+
 
 // document.querySelectorAll(".card").forEach((e) => {
 //     e.addEventListener("mouseleave", () => {
