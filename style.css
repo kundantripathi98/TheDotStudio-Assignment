@@ -31,6 +31,7 @@
     max-width: 1080px;
     width: 90%;
     height: 110vh;
+    padding: 20px 0;
     display: flex;
     justify-content: space-around;
     flex-direction: column;
@@ -190,11 +191,11 @@
     }
 
     .shadow h1{
-        font-size: 20px;
+        font-size: 19px;
     }
 
     .rectBox h1{
-        font-size: 20px;
+        font-size: 19px;
         padding-top: 15px;
         width: 100%;
         margin-bottom: 5px;
