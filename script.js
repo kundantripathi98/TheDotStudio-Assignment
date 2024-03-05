@@ -19,7 +19,7 @@ document.querySelectorAll(".card").forEach((e) => {
       gsap.to(rectBox, {
         width: "100%",
         opacity: 0.8,
-        height: 250,
+        height: "82%",
         duration: 0.5,
         ease: "power4",
       });
@@ -27,14 +27,14 @@ document.querySelectorAll(".card").forEach((e) => {
     //this for the elements inside the box
       gsap.to(title, {
         opacity: 1,
-        y: -15,
+        y: -12,
         ease: "power4",
         delay: 0.5,
       });
 
       gsap.to(paragraph, {
         opacity: 1,
-        y: -15,
+        y: -12,
         ease: "power4",
         delay: 0.7,
       });
