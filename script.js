@@ -1,126 +1,71 @@
 
-//--------------------------------------title-------------------------------------------------
-document.querySelectorAll(".card").forEach((e)=>{
-    e.addEventListener("mouseover", ()=>{
-        gsap.to(e.querySelector("#title"), {
-         y: -15,
-         opacity: 0,
-         ease: Power4
-         });
-     });
-
-     e.addEventListener("mouseleave", ()=>{
-        gsap.to(e.querySelector("#title"), {
-         y: 0,
-         opacity: 1,
-         ease: Power4
-         });
-     });
-});
-//--------------------------------------------------------------------------------------------------
-
-
-
-//---------------------------------------------------------div--------------------------------------------------
 document.querySelectorAll(".card").forEach((e) => {
-    e.addEventListener("mouseover", () => {
-        gsap.to(e.querySelector(".rectBox"), {
-            width: "100%",
-            opacity: 0.8,
-            height: 250,
-            duration: 0.95,
-            ease: "power4"
-        });
-    });
 
+    const rectBox = e.querySelector(".rectBox"),
+          title = e.querySelector(".rectBox h1"),
+          paragraph = e.querySelector(".rectBox p");
+
+// these are the events that will take place when mouse enter in the cards
+    e.addEventListener("mouseenter", () => {
+
+    //this is for main title of the card
+      gsap.to(e.querySelector("#title"), {
+        y: -15,
+        opacity: 0,
+        ease: Power4,
+      });
+      
+    //this for the box that will grow when mouse enters
+      gsap.to(rectBox, {
+        width: "100%",
+        opacity: 0.8,
+        height: 250,
+        duration: 0.5,
+        ease: "power4",
+      });
+
+    //this for the elements inside the box
+      gsap.to(title, {
+        opacity: 1,
+        y: -15,
+        ease: "power4",
+        delay: 0.5,
+      });
+
+      gsap.to(paragraph, {
+        opacity: 1,
+        y: -15,
+        ease: "power4",
+        delay: 0.7,
+      });
+    });
+ 
+//and these are the events that will take place when mouse leaves the cards
     e.addEventListener("mouseleave", () => {
-        gsap.to(e.querySelector(".rectBox"), {
-            width: 0,
-            height: 0,
-            duration: 0.95,
-            ease: "power4"
-        });
+      gsap.to(e.querySelector("#title"), {
+        y: 0,
+        opacity: 1,
+        ease: Power4,
+      });
+
+      gsap.to(rectBox, {
+        width: 0,
+        height: 0,
+        duration: 0.5,
+        ease: "power4",
+        opacity: 0,
+      });
+
+      gsap.to(title, {
+        opacity: 0,
+        y: 0,
+        ease: "power4",
+      });
+
+      gsap.to(paragraph, {
+        opacity: 0,
+        y: 0,
+        ease: "power4",
+      });
     });
-});
-
-//---------------------------------------------------------------------------------------
-
-
-
-//--------------------------------------------------text---------------------------------------------------
-document.querySelectorAll(".card").forEach((e) => {
-    e.addEventListener("mouseover", () => {
-        gsap.to(e.querySelector(".rectBox h1"), {
-            y: -15,
-            opacity: 1,
-            delay: 0.7,
-            ease: "power4"
-        });
-        gsap.to(e.querySelector(".rectBox p"), {
-            y: -15,
-            opacity: 1,
-            delay: 0.9,
-            ease: "power4"
-        });
-    });
-});
-
-document.querySelectorAll(".card").forEach((e) => {
-    e.addEventListener("mouseleave", () => {
-        gsap.to(e.querySelector(".rectBox h1"), {
-            display: "none",
-            opacity: 0,
-            ease: "power4"
-        });
-        gsap.to(e.querySelector(".rectBox p"), {
-            display: "none",
-            opacity: 0,
-            ease: "power4"
-        });
-    });
-});
-
-
-
-// document.querySelectorAll(".card").forEach((e) => {
-//     e.addEventListener("mouseleave", () => {
-//         gsap.to(e.querySelector(".rectBox h1"), {
-//             opacity: 0,
-//             ease: "power4",
-//             display: "none"
-//             // onComplete: function() {
-//             //     e.querySelector(".rectBox h1").style.display = "none";
-//             // }
-//         });
-//         gsap.to(e.querySelector(".rectBox p"), {
-//             opacity: 0,
-//             ease: "power4",
-//             display: "none"
-//             // onComplete: function() {
-//             //     e.querySelector(".rectBox p").style.display = "none";
-//             // }
-//         });
-//     });
-    
-//     e.addEventListener("mouseover", () => {
-//         gsap.to(e.querySelector(".rectBox h1"), {
-//             display: "block", 
-//             y: -15,
-//             opacity: 1,
-//             delay: 0.7,
-//             ease: "power4"
-//         });
-//         gsap.to(e.querySelector(".rectBox p"), {
-//             display: "block", 
-//             y: -15,
-//             opacity: 1,
-//             delay: 0.9,
-//             ease: "power4"
-//         });
-//     });
-// });
-
-
-
-
-
+  });
